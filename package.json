@@ -3,24 +3,37 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "tsx server/index.ts",
     "build": "next build",
-    "start": "next start",
+    "start": "cross-env NODE_ENV=production tsx server/index.ts",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint"
   },
   "dependencies": {
+    "cuelume": "^0.2.2",
+    "express": "^5.2.1",
+    "jotai": "^2.20.2",
+    "lucide-react": "^1.31.0",
+    "motion": "^13.1.0",
     "next": "16.3.1",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-colorful": "^5.8.0",
+    "react-dom": "19.2.8",
+    "react-toastify": "^11.1.0",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/express": "^5.0.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.1",
     "tailwindcss": "^4",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }
