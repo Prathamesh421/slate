@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DoodleDen
 
-## Getting Started
+A real-time collaborative whiteboard. Multiple users draw on the same board in the same room: live cursors, per-user undo, chat, images, emote reactions, and synthesized sounds.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19 + Express 5 + Socket.IO on a single Node process
+- TypeScript (strict), Tailwind CSS v4, Jotai, motion, lucide-react
+- Web Audio API for sounds (zero asset files), in-memory rooms (no database)
+
+## Features
+
+- Freehand pen, rectangle, ellipse, eraser, pan; Shift constrains shapes
+- Line and fill colors, 1-20px stroke width
+- Paste or pick images (auto-resized, draggable placement)
+- Region select with a contextual move / copy / delete bar
+- Per-user undo and redo (Ctrl+Z / Ctrl+Y), works under concurrency
+- Live cursors, user list with move counts, chat
+- Emote reactions, sound toggle, share link, download board as PNG
+
+## Run locally
+
+Requirements: Node.js 20+
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create or join a room by its 5-character ID. Open the link in two windows to see the realtime features.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Production
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+The server reads the port from the `PORT` environment variable (default 3000). No other configuration or external services are required.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Rooms live in the process memory and are gone when the server restarts; chat is not persisted.
+- Rooms are capped at 12 users.
