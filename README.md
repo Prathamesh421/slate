@@ -1,4 +1,4 @@
-# DoodleDen
+# Slate
 
 A real-time collaborative whiteboard. Multiple users draw on the same board in the same room: live cursors, per-user undo, chat, images, emote reactions, and synthesized sounds.
 
