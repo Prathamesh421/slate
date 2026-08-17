@@ -141,7 +141,7 @@ export function Toolbar() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `doodleden-${window.location.pathname.slice(1) || "board"}.png`;
+      a.download = `slate-${window.location.pathname.slice(1) || "board"}.png`;
       a.click();
       URL.revokeObjectURL(url);
       notify("Downloaded board as PNG", "success");
@@ -171,7 +171,7 @@ export function Toolbar() {
           >
             <div className="flex items-center justify-between">
               <h1 className="flex items-center gap-1.5 text-base font-extrabold tracking-tight text-zinc-900">
-                <Palette size={18} strokeWidth={2.4} className="text-violet-600" /> DoodleDen
+                <Palette size={18} strokeWidth={2.4} className="text-violet-600" /> Slate
               </h1>
               <button
                 onClick={() => setOpen(false)}

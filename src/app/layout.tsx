@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DoodleDen",
+  title: "Slate",
   description: "A real-time collaborative whiteboard that feels alive.",
 };
 

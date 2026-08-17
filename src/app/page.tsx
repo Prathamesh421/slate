@@ -57,7 +57,7 @@ export default function HomePage() {
             <Palette size={24} strokeWidth={2.2} />
           </span>
           <div>
-            <h1 className="text-2xl font-extrabold tracking-tight text-zinc-900">DoodleDen</h1>
+            <h1 className="text-2xl font-extrabold tracking-tight text-zinc-900">Slate</h1>
             <p className="text-xs text-zinc-500">Draw together. Live.</p>
           </div>
         </div>

@@ -203,7 +203,7 @@ async function main(): Promise<void> {
   });
 
   httpServer.listen(PORT, () => {
-    console.log(`DoodleDen ready on http://localhost:${PORT} (dev=${DEV})`);
+    console.log(`Slate ready on http://localhost:${PORT} (dev=${DEV})`);
   });
 }
 
