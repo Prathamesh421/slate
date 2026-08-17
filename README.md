@@ -2,6 +2,10 @@
 
 A real-time collaborative whiteboard. Multiple users draw on the same board in the same room: live cursors, per-user undo, chat, images, emote reactions, and synthesized sounds.
 
+## Demo
+
+Link: https://drive.google.com/file/d/1mfTGUDRS40QfBXHBbEW4tWIQKuJxoAFI/view?usp=drive_link
+
 ## Stack
 
 - Next.js 16 (App Router) + React 19 + Express 5 + Socket.IO on a single Node process
